@@ -1,4 +1,3 @@
-// WorldViewController.swift
 import UIKit
 
 final class WorldViewController: UIViewController {

@@ -21,7 +21,7 @@ struct ColorPalette {
         static let deadColorLight = UIColor(lightHex: 0xB0FFB4, darkHex: 0xB0FFB4, alpha: 1)
         static let lifeBornColorDark = UIColor(lightHex: 0xAD00FF, darkHex: 0xAD00FF, alpha: 1)
         static let lifeBornColorLight = UIColor(lightHex: 0xFFB0E9, darkHex: 0xFFB0E9, alpha: 1)
-        static let lifeDiedColorDark = UIColor(lightHex: 0x0B5AFE, darkHex: 0xFFFFFF, alpha: 1)
-        static let lifeDiedColorLight = UIColor(lightHex: 0x0B5AFE, darkHex: 0xFFFFFF, alpha: 1)
+        static let lifeDiedColorDark = UIColor(lightHex: 0x000000, darkHex: 0x000000, alpha: 1)
+        static let lifeDiedColorLight = UIColor(lightHex: 0x3B3B3B, darkHex: 0x3B3B3B, alpha: 1)
     }
 }
