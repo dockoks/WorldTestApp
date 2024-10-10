@@ -5,7 +5,6 @@ protocol CellManagerProtocol {
     func addNewCell() -> Int?
 }
 
-// CellManager.swift
 final class CellManager: CellManagerProtocol {
     private(set) var cells: [CellState] = []
     
@@ -13,12 +12,10 @@ final class CellManager: CellManagerProtocol {
     private var deadCount = 0
     private var lastLifeBornIndex: Int?
     
-    // Add a new cell and apply business rules
     func addNewCell() -> Int? {
         let newCell = generateRandomCell()
         cells.append(newCell)
         
-        // Update consecutive counters
         if newCell == .alive {
             aliveCount += 1
             deadCount = 0
@@ -27,7 +24,6 @@ final class CellManager: CellManagerProtocol {
             aliveCount = 0
         }
         
-        // Apply life or death rules
         if aliveCount == 3 {
             return createLifeBorn()
         } else if deadCount == 3 {
@@ -37,12 +33,10 @@ final class CellManager: CellManagerProtocol {
         return nil
     }
     
-    // Generate a random cell, either alive or dead
     private func generateRandomCell() -> CellState {
         return Bool.random() ? .alive : .dead
     }
     
-    // Append a "Life was born" cell and return its index
     private func createLifeBorn() -> Int? {
         let newLifeBornCellIndex = cells.count
         cells.append(.lifeBorn)
@@ -50,7 +44,6 @@ final class CellManager: CellManagerProtocol {
         return nil
     }
     
-    // Change the most recent "Life was born" cell to "Life died" and return its index
     private func killNearbyLifeBorn() -> Int? {
         if let index = lastLifeBornIndex, cells[index] == .lifeBorn {
             cells[index] = .lifeDied
